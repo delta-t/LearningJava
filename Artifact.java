@@ -12,24 +12,30 @@ package com;
 
 public class Artifact {
     String culture;
-    int century;
+    int century, id;
 
     static int counter = 0;
 
+    // Неизвестный артефакт.
     public Artifact(){
         counter++;
         this.culture = "Неизвестно";
+        this.id = counter;
     }
 
+    // Известна культура, которая создала этот артефакт.
     public Artifact(String culture){
         counter++;
         this.culture = culture;
+        this.id = counter;
     }
 
+    // Известны век создания артефакта и культура, создавшая его.
     public Artifact(String culture, int century){
         counter++;
         this.culture = culture;
         this.century = century;
+        this.id = counter;
     }
 
     public static void main(String[] args) {
